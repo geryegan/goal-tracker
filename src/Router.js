@@ -4,6 +4,7 @@ import TasksHome from './components/TasksHome';
 import CreateTask from './components/CreateTask';
 import LoginForm from './components/LoginForm';
 import TasksByDay from './components/TasksByDayHome';
+import TaskEdit from './components/TaskEdit';
 
 const RouterComponent = () => {
   const { transparentBorder, navBarStyle, textStyle } = styles;
@@ -30,6 +31,12 @@ const RouterComponent = () => {
           key="createTask" 
           component={CreateTask} 
           title="Create Task" 
+        />
+        <Scene 
+          navigationBarStyle={navBarStyle} 
+          key="navTaskEdit" 
+          component={TaskEdit} 
+          title="Edit Task" 
         />
         <Scene 
         navigationBarStyle={navBarStyle} 
