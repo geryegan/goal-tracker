@@ -31,12 +31,6 @@ class Task extends Component {
      const { uid } = this.props.task;
         this.props.taskRemove({ uid });
         }
-    completeOrNah() {
-        if (this.state.status === 'Complete') {
-            return 'COMPLETE';
-        } 
-            return 'INCOMPLETE';
-    }
     buttonTextConditional() {
         if (this.props.status === 'Incomplete') {
             return 'Complete';
