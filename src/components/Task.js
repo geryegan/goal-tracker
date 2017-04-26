@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Animated, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { Button } from './common';
+import { CardSection } from './gridercommon';
 import styles from '../styles/styles';
 import { taskEdit, taskRemove } from '../actions';
 
@@ -30,7 +32,10 @@ class Task extends Component {
     removeTask() {
      const { uid } = this.props.task;
         this.props.taskRemove({ uid });
-        }
+    }
+    editTask() {
+        Actions.navTaskEdit({ task: this.props.task });
+    }
     buttonTextConditional() {
         if (this.props.status === 'Incomplete') {
             return 'Complete';
@@ -43,12 +48,17 @@ class Task extends Component {
             <Text style={styles.welcome}> {this.props.title} </Text>
             <Text style={styles.welcome}> {this.props.status} </Text>
             <Text style={styles.welcome}> {this.props.days} </Text>
-            <Button onPress={this.completeTask.bind(this)} >
-                Tap to mark {this.buttonTextConditional()}
-            </Button>
-            <Button onPress={this.removeTask.bind(this)}>
-                Delete Task
-            </Button>
+            <CardSection>
+                <Button onPress={this.completeTask.bind(this)} >
+                    Tap to mark {this.buttonTextConditional()}
+                </Button>
+                <Button onPress={this.removeTask.bind(this)}>
+                    Delete Task
+                </Button>
+                <Button onPress={this.editTask.bind(this)}>
+                    Edit Task
+                </Button>
+            </CardSection>
         </Animated.View>);
     }
 }
