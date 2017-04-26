@@ -6,3 +6,5 @@ export const LOGIN_USER = 'login_user';
 export const TASK_UPDATE = 'task_update';
 export const TASK_CREATE = 'task_create';
 export const TASKS_FETCH_SUCCESS = 'tasks_fetch_success';
+export const TASK_EDIT_SUCCESS = 'task_edit_success';
+export const TASK_SAVE_SUCCESS = 'task_edit_success';
