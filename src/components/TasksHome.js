@@ -21,7 +21,6 @@ class TasksHome extends Component {
       this.createDataSource(this.props);
       console.log(this.props.tasks);
   }
-
   componentWillReceiveProps(nextProps) {
       //nextProps are the next set of props that this component will be rendered cloneWithRows
       //this.props is still the old set of props
