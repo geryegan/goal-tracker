@@ -1,4 +1,4 @@
-import { TASK_UPDATE, TASK_CREATE, TASKS_FETCH_SUCCESS } from '../actions/types';
+import { TASK_UPDATE, TASK_CREATE, TASKS_FETCH_SUCCESS, TASK_SAVE_SUCCESS } from '../actions/types';
 
 const INITIAL_STATE = {
     title: '',
@@ -22,6 +22,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...INITIAL_STATE };
         case TASKS_FETCH_SUCCESS:
             return { ...state };
+        case TASK_SAVE_SUCCESS:
+            return { ...INITIAL_STATE };
         default:
             return { ...state };
     }
